@@ -1,4 +1,5 @@
 import requests
+from typing import Union
 
 class get_html:
     def __init__(self, url: str) -> None:
@@ -12,7 +13,7 @@ class get_html:
                     (KHTML, like Gecko) Chrome/78.0.3904.70 Mobile \
                         Safari/537.36')}
     
-    def get_req(self) -> str or int:
+    def get_req(self) -> Union[str, int]:
         if not self.url:
             return None
 
@@ -24,7 +25,7 @@ class get_html:
 
             return req.text
     
-    def get_content(self) -> bytes or int:
+    def get_content(self) -> Union[bytes, int]:
         if not self.url:
             return None
         

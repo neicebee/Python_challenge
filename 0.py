@@ -2,6 +2,7 @@
 0.html
 '''
 
-# print(pow(2, 38))
+print(pow(2, 38))
+print(2**38)
 
-while A:=eval('+'.join(input())): print(A)
+# while A:=eval('+'.join(input())): print(A)
