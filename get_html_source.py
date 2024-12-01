@@ -16,26 +16,18 @@ class get_html:
     def get_req(self) -> Union[str, int]:
         if not self.url:
             return None
-
         with requests.Session() as s:
             req = s.get(self.url, headers=self.hdr)
-
-            if not req.status_code == 200:
-                return req.status_code
-
-            return req.text
+            output = req.status_code if not req.status_code == 200 else req.text
+        return output
     
     def get_content(self) -> Union[bytes, int]:
         if not self.url:
             return None
-        
         with requests.Session() as s:
             req = s.get(self.url, headers=self.hdr)
-
-            if not req.status_code == 200:
-                return req.status_code
-    
-            return req.content
+            output = req.status_code if not req.status_code == 200 else req.content
+        return output
         
     def check_url(self) -> str:
         return self.url
